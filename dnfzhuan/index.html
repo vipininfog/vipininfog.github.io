@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNF转区 - 官方转区规则、跨服迁移流程与防骗指南</title>
+    <meta name="description" content="本站提供DNF转区官方规则查询、跨服角色迁移操作步骤详解、各大频道转移成功率及注意事项，帮助玩家安全、高效完成角色转移，避免数据丢失与账号风险。">
+    <meta name="keywords" content="DNF转区,地下城与勇士转区,跨服转移,角色迁移,转区规则,DNF跨区">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e60012; /* DNF 红 */
+            --primary-hover: #cc000f;
+            --bg-color: #f0f0f0;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --border-color: #e0e0e0;
+            --accent-blue: #00a1d6; /* 科技蓝 */
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "Heiti SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 16px;
+            color: var(--text-sub);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* 核心流程卡片 */
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 24px;
+            padding-left: 12px;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .step-card {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 80px;
+            font-weight: 900;
+            color: rgba(0,0,0,0.03);
+            z-index: 0;
+        }
+
+        .step-icon {
+            width: 48px;
+            height: 48px;
+            background-color: rgba(230, 0, 18, 0.1);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-card p {
+            font-size: 14px;
+            color: var(--text-sub);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 规则与限制列表 */
+        .rules-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .rule-box {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 4px solid var(--accent-blue);
+        }
+
+        .rule-box h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .rule-list li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 15px;
+            color: var(--text-main);
+        }
+
+        .rule-list li::before {
+            content: "•";
+            color: var(--accent-blue);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .warning-box {
+            background-color: #fff8f8;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+            padding: 16px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #721c24;
+            display: flex;
+            gap: 12px;
+            align-items: start;
+        }
+
+        /* 转区时间表 */
+        .schedule-section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 60px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .schedule-table th, .schedule-table td {
+            text-align: left;
+            padding: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .schedule-table th {
+            color: var(--text-sub);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .schedule-table td {
+            font-size: 15px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .status-open { background-color: #d4edda; color: #155724; }
+        .status-closed { background-color: #f8d7da; color: #721c24; }
+
+        /* FAQ */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 16px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 16px;
+            background: #fff;
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 24px;
+            color: var(--text-sub);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 20px;
+            background-color: #fafafa;
+            color: var(--text-sub);
+            font-size: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            padding-bottom: 20px;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2b2b2b;
+            color: #999;
+            padding: 40px 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 14px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 12px 0;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 12px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .rules-container {
+                grid-template-columns: 1fr;
+            }
+
+            .schedule-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">DNF<span>转区助手</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">转区指南</a></li>
+                    <li><a href="#">规则查询</a></li>
+                    <li><a href="#">防骗提示</a></li>
+                    <li><a href="#">跨服社区</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-button">进入转区大厅</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>DNF转区全攻略</h1>
+                <p>了解最新的跨服角色转移规则、操作步骤及注意事项，助您轻松跨越服务器，与好友同服竞技。</p>
+                <div class="hero-tags">
+                    <span class="tag">跨一至跨七</span>
+                    <span class="tag">宠物转移</span>
+                    <span class="tag">仓库共享</span>
+                    <span class="tag">安全转移</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- 操作步骤 -->
+            <section id="steps">
+                <div class="section-title">转区操作流程</div>
+                <div class="steps-grid">
+                    <article class="step-card">
+                        <div class="step-number">01</div>
+                        <div class="step-icon">⚙️</div>
+                        <h3>检查资格</h3>
+                        <p>确保角色满足转区条件，包括等级限制、未进行过近期角色删除、未涉及违规操作等。</p>
+                    </article>
+                    <article class="step-card">
+                        <div class="step-number">02</div>
+                        <div class="step-icon">📦</div>
+                        <h3>整理物品</h3>
+                        <p>将贵重物品、稀有材料存入仓库或分解，转区后背包将清空，请提前做好备份。</p>
+                    </article>
+                    <article class="step-card">
+                        <div class="step-number">03</div>
+                        <div class="step-icon">🎫</div>
+                        <h3>提交申请</h3>
+                        <p>在游戏内“角色管理”中选择转区功能，支付转区费用，并选择目标大区。</p>
+                    </article>
+                    <article class="step-card">
+                        <div class="step-number">04</div>
+                        <div class="step-icon">✅</div>
+                        <h3>完成转移</h3>
+                        <p>等待官方维护或转区时间窗口，系统处理完成后，角色将自动出现在新大区。</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 规则与限制 -->
+            <section id="rules" class="rules-container">
+                <div class="rule-box">
+                    <h3>⚖️ 转区核心规则</h3>
+                    <ul class="rule-list">
+                        <li>每个角色每90天可进行一次转区操作。</li>
+                        <li>转区会清空角色背包和仓库中的所有物品。</li>
+                        <li>转区后，原大区的该角色将无法登录，请务必确认目标服务器无误。</li>
+                        <li>宠物、称号等可转移道具需符合当前版本规则。</li>
+                        <li>转区期间无法进行游戏，请提前安排好游戏时间。</li>
+                    </ul>
+                </div>
+                <div class="rule-box" style="border-top-color: #ff9800;">
+                    <h3>⚠️ 重要注意事项</h3>
+                    <ul class="rule-list">
+                        <li>切勿在转区期间登录原角色，否则可能导致转移失败。</li>
+                        <li>转区费用为固定金额，请通过官方渠道支付。</li>
+                        <li>转移后，原大区的角色数据将被永久清除。</li>
+                        <li>跨服转移后，部分跨服活动资格可能需要重新确认。</li>
+                    </ul>
+                    <div class="warning-box">
+                        <strong>安全提示：</strong> 请勿相信任何“代转区”、“免费转区”的第三方服务，以免造成账号被盗或财产损失。
+                    </div>
+                </div>
+            </section>
+
+            <!-- 转区时间表 -->
+            <section id="schedule">
+                <div class="section-title">近期转区时间安排</div>
+                <div class="schedule-section">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>转区周期</th>
+                                <th>执行时间</th>
+                                <th>当前状态</th>
+                                <th>目标大区范围</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>第1-2周</td>
+                                <td>周二 00:00 - 周一 23:59</td>
+                                <td><span class="status-badge status-closed">已结束</span></td>
+                                <td>跨一、跨二、跨三</td>
+                            </tr>
+                            <tr>
+                                <td>第3-4周</td>
+                                <td>周二 00:00 - 周一 23:59</td>
+                                <td><span class="status-badge status-open">正在进行</span></td>
+                                <td>跨四、跨五</td>
+                            </tr>
+                            <tr>
+                                <td>下期预告</td>
+                                <td>下周二 00:00</td>
+                                <td><span class="status-badge status-closed">未开始</span></td>
+                                <td>跨六、跨七</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 15px; font-size: 14px; color: #666;">* 具体时间以游戏内公告为准，建议在转区窗口开始前提前登录游戏排队。</p>
+                </div>
+            </section>
+
+            <!-- 常见问题 -->
+            <section id="faq" class="faq-section">
+                <div class="section-title">常见问题解答</div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">转区后等级会重置吗？</div>
+                    <div class="faq-answer">
+                        不会。角色等级、职业、技能等级以及装备属性都会完整保留，但物品会被清空。
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">转区需要支付什么费用？</div>
+                    <div class="faq-answer">
+                        需要支付一定的转区手续费，具体金额请参考游戏内“角色管理”界面的提示。通常包含角色转移费和跨服通道费。
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">如果转区失败怎么办？</div>
+                    <div class="faq-answer">
+                        请检查是否满足转区条件（如背包未满、未在冷却期内等）。若系统提示失败，通常会在24小时内处理，失败申请会自动退费。
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">转区后还能回到原大区吗？</div>
+                    <div class="faq-answer">
+                        不能。转区是单向操作，一旦完成，原大区的角色将被永久删除，无法恢复。
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于转区</h4>
+                    <ul>
+                        <li><a href="#">转区规则总览</a></li>
+                        <li><a href="#">跨服大区介绍</a></li>
+                        <li><a href="#">历史转区记录</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>安全提示</h4>
+                    <ul>
+                        <li><a href="#">官方防骗指南</a></li>
+                        <li><a href="#">账号安全设置</a></li>
+                        <li><a href="#">违规处理公告</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">联系客服</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">玩家公约</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>本站为玩家攻略与资讯聚合平台，非腾讯官方。所有游戏版权归腾讯游戏所有。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                        }
+                    });
+                    
+                    // 切换当前项
+                    item.classList.toggle('active');
+                    const answer = item.querySelector('.faq-answer');
+                    if (item.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    } else {
+                        answer.style.maxHeight = null;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
