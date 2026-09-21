@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金迪尔皮卡 - 精选皮卡车型评测、配置对比与选购指南</title>
+    <meta name="description" content="金迪尔皮卡专业评测平台，提供金迪尔皮卡参数配置、油耗实测、驾驶体验、改装案例及最新报价信息。深度解析皮卡车型特点，助您做出明智购车决策。">
+    <meta name="keywords" content="金迪尔皮卡, 皮卡车型评测, 皮卡配置对比, 皮卡油耗, 皮卡改装, 金迪尔参数">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --border-color: #e1e4e8;
+            --container-width: 1200px;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        .btn-search {
+            background: none;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.1);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* 通用 Section */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -22px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+        }
+
+        .view-all {
+            color: var(--accent-color);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* 核心参数卡片 */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .spec-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .spec-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .spec-icon {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .spec-label {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 8px;
+        }
+
+        .spec-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .spec-unit {
+            font-size: 14px;
+            color: var(--text-gray);
+            font-weight: normal;
+            margin-left: 4px;
+        }
+
+        /* 评测列表 */
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .article-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: box-shadow 0.2s;
+        }
+
+        .article-card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--text-gray);
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .card-excerpt {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* 对比区域 */
+        .comparison-section {
+            background-color: var(--bg-light);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-table th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .comparison-table th:first-child {
+            width: 150px;
+            background-color: #34495e;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        /* FAQ 区域 */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--text-gray);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-gray);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-bottom: 20px;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* 简化处理，移动端隐藏菜单 */
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">金迪尔<span>皮卡</span></a>
+            <nav class="nav-links">
+                <a href="#specs" class="active">核心参数</a>
+                <a href="#reviews">评测文章</a>
+                <a href="#comparison">车型对比</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <button class="btn-search">搜索车型</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>金迪尔皮卡深度解析</h1>
+                <p>探索专业评测数据、真实油耗表现与改装潜力。从城市通勤到野外穿越，全方位了解金迪尔皮卡的实际驾驶体验与产品实力。</p>
+                <div class="hero-tags">
+                    <span class="tag">2.5T柴油动力</span>
+                    <span class="tag">四驱系统</span>
+                    <span class="tag">改装潜力</span>
+                    <span class="tag">商用兼顾</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心参数 Section -->
+        <section id="specs" class="container">
+            <div class="section-header">
+                <h2 class="section-title">核心性能参数</h2>
+                <a href="#" class="view-all">查看完整配置表 &rarr;</a>
+            </div>
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <div class="spec-icon">⚡</div>
+                    <div class="spec-label">发动机</div>
+                    <div class="spec-value">2.5T 柴油涡轮增压</div>
+                    <div class="spec-label" style="margin-top:8px">最大功率/扭矩</div>
+                    <div class="spec-value">110kW / 360N·m</div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-icon">📏</div>
+                    <div class="spec-label">车身尺寸 (长宽高)</div>
+                    <div class="spec-value">5395 / 1860 / 1760 <span class="spec-unit">mm</span></div>
+                    <div class="spec-label" style="margin-top:8px">轴距</div>
+                    <div class="spec-value">3080 <span class="spec-unit">mm</span></div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-icon">⛽</div>
+                    <div class="spec-label">综合油耗</div>
+                    <div class="spec-value">8.5 - 9.5 <span class="spec-unit">L/100km</span></div>
+                    <div class="spec-label" style="margin-top:8px">油箱容积</div>
+                    <div class="spec-value">80 <span class="spec-unit">L</span></div>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-icon">🛣️</div>
+                    <div class="spec-label">驱动方式</div>
+                    <div class="spec-value">前置四驱</div>
+                    <div class="spec-label" style="margin-top:8px">变速箱</div>
+                    <div class="spec-value">6速手动</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 评测文章 Section -->
+        <section id="reviews" class="container" style="background-color: #fff;">
+            <div class="section-header">
+                <h2 class="section-title">深度评测与用车报告</h2>
+                <a href="#" class="view-all">阅读更多评测 &rarr;</a>
+            </div>
+            <div class="review-grid">
+                <article class="article-card">
+                    <div class="card-image">
+                        <span class="card-badge">试驾</span>
+                        <img src="https://picsum.photos/seed/pickup1/400/250" alt="金迪尔皮卡试驾体验">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">2023-10-15 · 驾驶室评测</div>
+                        <h3 class="card-title">城市通勤与野外穿越：金迪尔皮卡真实试驾感受</h3>
+                        <p class="card-excerpt">在拥堵的城市道路中，金迪尔的低速扭矩表现如何？而在非铺装路面上，四驱系统的脱困能力是否满足预期？本文为您带来第一手实测数据。</p>
+                        <div class="card-footer">
+                            <span>阅读全文</span>
+                            <span>5 min</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="card-image">
+                        <span class="card-badge">改装</span>
+                        <img src="https://picsum.photos/seed/pickup2/400/250" alt="金迪尔皮卡外观改装">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">2023-09-28 · 改装案例</div>
+                        <h3 class="card-title">打造硬派风格：金迪尔皮卡外观改装指南</h3>
+                        <p class="card-excerpt">从前杠升级到轮胎选择，我们详细解析了如何在不破坏原车结构的前提下，提升金迪尔皮卡的外观气场与通过性。</p>
+                        <div class="card-footer">
+                            <span>阅读全文</span>
+                            <span>8 min</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="card-image">
+                        <span class="card-badge">油耗</span>
+                        <img src="https://picsum.photos/seed/pickup3/400/250" alt="金迪尔皮卡油耗测试">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">2023-09-10 · 耗能分析</div>
+                        <h3 class="card-title">重载行驶下的油耗表现：数据说话</h3>
+                        <p class="card-excerpt">针对物流运输场景，我们进行了多次满载测试，对比不同路况下的油耗差异，为商用车主提供参考依据。</p>
+                        <div class="card-footer">
+                            <span>阅读全文</span>
+                            <span>6 min</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 车型对比 Section -->
+        <section id="comparison" class="comparison-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">热门车型参数对比</h2>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>对比项目</th>
+                                <th>金迪尔皮卡 (2.5T)</th>
+                                <th>竞品A (2.8T)</th>
+                                <th>竞品B (2.0T)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>最大马力</td>
+                                <td class="highlight">150 Ps</td>
+                                <td>136 Ps</td>
+                                <td>140 Ps</td>
+                            </tr>
+                            <tr>
+                                <td>最大扭矩</td>
+                                <td class="highlight">360 Nm</td>
+                                <td>320 Nm</td>
+                                <td>350 Nm</td>
+                            </tr>
+                            <tr>
+                                <td>拖挂资质</td>
+                                <td class="highlight">1.5吨</td>
+                                <td>1.2吨</td>
+                                <td>1.0吨</td>
+                            </tr>
+                            <tr>
+                                <td>油箱容积</td>
+                                <td>80 L</td>
+                                <td>75 L</td>
+                                <td>70 L</td>
+                            </tr>
+                            <tr>
+                                <td>百公里油耗</td>
+                                <td>8.8 L</td>
+                                <td>9.2 L</td>
+                                <td>9.5 L</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="container">
+            <div class="section-header">
+                <h2 class="section-title">常见问题解答</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">金迪尔皮卡适合什么用途？</div>
+                    <div class="faq-answer">
+                        <p>金迪尔皮卡主要定位于商用与家用兼顾的车型。其2.5T柴油发动机动力充沛，适合拉货运输、工地作业；同时车身尺寸适中，驾驶室舒适，也适合家庭长途自驾和户外露营。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">皮卡上牌需要满足什么条件？</div>
+                    <div class="faq-answer">
+                        <p>根据不同地区的政策，金迪尔皮卡作为乘用化皮卡（如具备轿车化内饰），通常可以申请蓝牌（C本驾驶）和C2驾照。但具体限行政策需咨询当地车管所。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">2.5T发动机的保养成本高吗？</div>
+                    <div class="faq-answer">
+                        <p>相比小排量汽油发动机，2.5T柴油发动机的维护成本相对较低。柴油本身的燃油经济性更好，且维修保养体系成熟。建议定期更换机油机滤，并注意柴油滤芯的清洁。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于金迪尔皮卡</h4>
+                    <p style="font-size: 14px; line-height: 1.8;">提供专业的金迪尔皮卡资讯、评测与改装服务，致力于为皮卡爱好者打造最全面的信息交流平台。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#specs">核心参数</a></li>
+                        <li><a href="#reviews">最新评测</a></li>
+                        <li><a href="#comparison">车型对比</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>邮箱：info@jindier-pickup.com</li>
+                        <li>电话：400-123-4567</li>
+                        <li>地址：汽车产业园区A栋</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 金迪尔皮卡评测平台. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 手风琴交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
