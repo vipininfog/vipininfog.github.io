@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>caomei-草莓百科与种植养护指南</title>
+    <meta name="description" content="caomei草莓百科提供全面的草莓种植指南、品种介绍、病虫害防治及采摘技巧，帮助您从选种到收获，享受有机草莓的乐趣。">
+    <meta name="keywords" content="caomei,草莓种植,草莓品种,有机草莓,草莓采摘">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #f1faee;
+            --accent-color: #457b9d;
+            --text-dark: #1d3557;
+            --text-gray: #6c757d;
+            --bg-light: #f8f9fa;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-subscribe {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .btn-subscribe:hover {
+            background-color: #d62839;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff0f3 0%, #ffe5ec 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .hero-content h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* Features / Guide Cards */
+        .features {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: var(--radius);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Planting Guide Section */
+        .guide-section {
+            padding: 80px 0;
+        }
+
+        .guide-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .guide-sidebar {
+            background: white;
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--card-shadow);
+        }
+
+        .guide-sidebar h3 {
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
+        .guide-list li {
+            margin-bottom: 12px;
+        }
+
+        .guide-list a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: var(--bg-light);
+            transition: all 0.2s;
+        }
+
+        .guide-list a:hover {
+            background-color: #ffe5ec;
+            color: var(--primary-color);
+        }
+
+        .guide-list a::after {
+            content: '→';
+            font-size: 0.8rem;
+        }
+
+        .guide-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .guide-article {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--card-shadow);
+        }
+
+        .guide-article h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .guide-article p {
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .step-list {
+            counter-reset: step;
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .step-list li {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 20px;
+        }
+
+        .step-list li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Varieties Grid */
+        .varieties {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .varieties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .variety-card {
+            border: 1px solid #eee;
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .variety-card:hover {
+            box-shadow: var(--card-shadow);
+        }
+
+        .variety-img-placeholder {
+            width: 100%;
+            height: 180px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 3rem;
+        }
+
+        .variety-info {
+            padding: 20px;
+        }
+
+        .variety-info h4 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .variety-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            background-color: var(--secondary-color);
+            color: var(--accent-color);
+            border-radius: 4px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: var(--radius);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-gray);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simplified mobile nav for this demo */
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .guide-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    🍓 caomei
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#guide">种植指南</a></li>
+                    <li><a href="#varieties">品种大全</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                    <li><a href="#community">种植社区</a></li>
+                </ul>
+                <a href="#subscribe" class="btn-subscribe">获取种植日历</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>caomei <span>种植百科</span></h1>
+                <p>无论您是阳台新手还是资深果农，这里都有关于caomei草莓的全方位知识。从土壤选择到病虫害防治，助您收获甜美果实。</p>
+                <div style="margin-bottom: 20px;">
+                    <a href="#guide" class="btn-subscribe" style="background: white; color: var(--primary-color);">开始学习</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>12+</h3>
+                        <p>推荐品种</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50+</h3>
+                        <p>种植技巧</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>有机养护</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features / Core Values -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">caomei 核心价值</h2>
+                <p class="section-subtitle">科学种植，享受健康生活</p>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🌱</div>
+                        <h3>科学选种</h3>
+                        <p>详细介绍不同caomei品种的特性，帮助您根据气候和空间选择最适合的草莓苗，提高成活率。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">💧</div>
+                        <h3>精准灌溉</h3>
+                        <p>掌握滴灌与喷灌的最佳时机与水量，避免烂根，确保果实口感与甜度达到最佳状态。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🐛</div>
+                        <h3>病害防治</h3>
+                        <p>识别红蜘蛛、白粉病等常见病虫害，提供安全无毒的绿色防控方案，守护草莓健康。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Guide -->
+        <section id="guide" class="guide-section">
+            <div class="container">
+                <h2 class="section-title">caomei 全程种植指南</h2>
+                <p class="section-subtitle">从春季定植到秋季采收，每一个环节都至关重要。</p>
+                
+                <div class="guide-layout">
+                    <aside class="guide-sidebar">
+                        <h3>目录导航</h3>
+                        <ul class="guide-list">
+                            <li><a href="#soil">土壤与基质准备</a></li>
+                            <li><a href="#planting">定植技巧</a></li>
+                            <li><a href="#fertilizer">水肥管理</a></li>
+                            <li><a href="#harvest">采收标准</a></li>
+                            <li><a href="#overwinter">越冬管理</a></li>
+                        </ul>
+                    </aside>
+
+                    <div class="guide-content">
+                        <article id="soil" class="guide-article">
+                            <h2>1. 土壤与基质准备</h2>
+                            <p>caomei草莓喜光、喜温、喜湿润，但忌积水。种植前必须准备疏松、透气、排水良好的土壤。</p>
+                            <p>推荐使用草炭土、珍珠岩和蛭石按 3:1:1 的比例混合，或者使用专业的草莓专用营养土。避免使用未腐熟的有机肥，以免烧根。</p>
+                        </article>
+
+                        <article id="planting" class="guide-article">
+                            <h2>2. 定植技巧</h2>
+                            <p>定植时间通常在春秋两季，气温在15-25℃时成活率最高。</p>
+                            <ul class="step-list">
+                                <li><strong>深度：</strong>草莓苗定植深度以“深不埋心，浅不露根”为宜，即苗心基部与土面平齐。</li>
+                                <li><strong>方向：</strong>弓背方向应朝外，这样有利于果实着色和通风透光。</li>
+                                <li><strong>密度：</strong>一般每亩地种植8000-10000株，具体视品种而定。</li>
+                            </ul>
+                        </article>
+
+                        <article id="fertilizer" class="guide-article">
+                            <h2>3. 水肥管理</h2>
+                            <p>caomei草莓需肥量大，但根系浅，应遵循“少量多次”的原则。</p>
+                            <p>生长期以氮肥为主，促进叶片生长；花芽分化期增施磷钾肥，提高果实品质。开花结果期应控制浇水，避免水滴沾染果实导致腐烂。</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Varieties Showcase -->
+        <section id="varieties" class="varieties">
+            <div class="container">
+                <h2 class="section-title">热门caomei品种</h2>
+                <p class="section-subtitle">了解不同caomei品种的特点，找到您的最爱。</p>
+                <div class="varieties-grid">
+                    <div class="variety-card">
+                        <div class="variety-img-placeholder">🍓</div>
+                        <div class="variety-info">
+                            <h4>红颜</h4>
+                            <p style="font-size:0.9rem; color:#666; margin-bottom:10px;">香气浓郁，口感香甜，耐储运，是目前国内最受欢迎的品种。</p>
+                            <div class="variety-tags">
+                                <span class="tag">甜度高</span>
+                                <span class="tag">易种植</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="variety-card">
+                        <div class="variety-img-placeholder">🍓</div>
+                        <div class="variety-info">
+                            <h4>章姬</h4>
+                            <p style="font-size:0.9rem; color:#666; margin-bottom:10px;">果形长圆锥形，色泽鲜红，果肉细腻，但耐储运性稍差。</p>
+                            <div class="variety-tags">
+                                <span class="tag">果形美</span>
+                                <span class="tag">口感嫩</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="variety-card">
+                        <div class="variety-img-placeholder">🍓</div>
+                        <div class="variety-info">
+                            <h4>白雪公主</h4>
+                            <p style="font-size:0.9rem; color:#666; margin-bottom:10px;">白色果肉，果面鲜红，风味独特，外观极具观赏性。</p>
+                            <div class="variety-tags">
+                                <span class="tag">稀有</span>
+                                <span class="tag">观赏性</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="variety-card">
+                        <div class="variety-img-placeholder">🍓</div>
+                        <div class="variety-info">
+                            <h4>甜查理</h4>
+                            <p style="font-size:0.9rem; color:#666; margin-bottom:10px;">丰产性好，抗病性强，适合大面积种植和反季节栽培。</p>
+                            <div class="variety-tags">
+                                <span class="tag">高产</span>
+                                <span class="tag">抗病</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container faq-container">
+                <h2 class="section-title">caomei 常见问题解答</h2>
+                <div class="faq-item">
+                    <div class="faq-question">caomei草莓可以水培吗？</div>
+                    <div class="faq-answer">可以。水培caomei种植在营养液中，不仅干净卫生，而且便于观察根系生长，适合家庭阳台种植。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">caomei叶子发黄是什么原因？</div>
+                    <div class="faq-answer">叶子发黄可能由多种原因引起：浇水过多导致烂根、缺铁性黄化、光照不足或氮肥过量。建议检查土壤湿度和叶片颜色进行判断。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">caomei种植需要授粉树吗？</div>
+                    <div class="faq-answer">caomei是自花授粉植物，一般不需要专门的授粉树。但在大棚内种植时，引入蜜蜂辅助授粉可以提高座果率和果实品质。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>caomei百科</h4>
+                    <p style="color: #ccc; font-size: 0.9rem; line-height: 1.8;">
+                        致力于为草莓种植爱好者提供最专业、最全面的种植知识和技术支持。让每一颗caomei都充满阳光的味道。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">品种介绍</a></li>
+                        <li><a href="#">种植日记</a></li>
+                        <li><a href="#">病虫害图谱</a></li>
+                        <li><a href="#">购买苗圃</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">商务合作</a></li>
+                        <li><a href="#">加入社区</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 caomei种植百科. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
